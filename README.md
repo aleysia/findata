@@ -1,6 +1,6 @@
-# FINDATA
+# findata
 
-## A Python package for downloading, cleaning, and modeling stock market data
+## A Python package for building models on stock market data
 
 
 <!-- TABLE OF CONTENTS -->
@@ -132,7 +132,7 @@ data = engineer.data
 # Prediction using LightGBM
 import findata.ModelTrainer as mt
 
-trainer = mt.LightGBMModelTrainer(data, y_variable='SPY_close', date_col=None, target_horizon_days=5)
+trainer = mt.LightGBMModelTrainer(data, y_variable='SPY_close', target_horizon_days=5)
 trainer.setup_data(sliding_window=5)
 trainer.set_params(loss_function='rmse')
 trainer.run(skip_tuning=True)
